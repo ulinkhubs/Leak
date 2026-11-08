@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="bhacaxhaAMWbhwIh0LuaPvXqbMAwRD1WNWCOK5GoJ5o" />
+    <meta charset="UTF-8">
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=b2af36c4-9187-48b8-94d3-ce1fa5adfca3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer">
+    <title>FAWAD Gaming (FF DATAMINER)</title>
+    
+    <link rel="preconnect" href="https://dl.dir.freefiremobile.com">
+    <link rel="preconnect" href="https://dl.aw.freefiremobile.com">
+    <link rel="preconnect" href="https://dl-tata.freefireind.in">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RED & WHITE AMBIENT SETUP VARIABLES --- */
+        :root {
+            --bg-base: #0a0304; /* Dark Reddish Black Base */
+            --bg-surface: rgba(25, 8, 12, 0.45); 
+            --primary: #ff1a40; /* Vibrant Setup Crimson Red */
+            --secondary: #b30024; 
+            --text-main: #ffffff; /* Clean White Text */
+            --text-dim: #e2cecf;
+            --border-light: rgba(255, 26, 64, 0.25);
+            --border-glow: rgba(255, 26, 64, 0.6);
+            --danger: #ff0033;
+            --success: #ffffff; /* White Highlighting */
+            --warning: #ff4d6d;
+        }
+
+        * { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            margin: 0; padding: 0;
+            min-height: 100vh;
+            padding-bottom: 90px;
+        }
+
+        /* --- BOUNCING BALL SCAN ANIMATION --- */
+        .scan-animation-container {
+            display: none;
+            width: 100%;
+            height: 30px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            margin-top: 6px;
+        }
+
+        .bouncing-ball {
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 12px var(--primary), 0 0 20px #ffffff;
+            animation: bounceTrack 0.6s cubic-bezier(0.3, 0.8, 0.4, 1) infinite alternate;
+        }
+
+        @keyframes bounceTrack {
+            0% {
+                transform: translateY(10px) scale(1, 0.7);
+                box-shadow: 0 2px 5px rgba(255, 26, 64, 0.8), 0 0 12px var(--primary);
+            }
+            100% {
+                transform: translateY(-10px) scale(0.9, 1.1);
+                box-shadow: 0 12px 15px rgba(255, 26, 64, 0.3), 0 0 25px #ffffff;
+            }
+        }
+
+        /* --- FLOATING HEADER --- */
+        .hero-wrapper {
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .hero-section {
+            background: var(--bg-surface);
+            backdrop-filter: blur(22px) saturate(160%);
+            -webkit-backdrop-filter: blur(22px) saturate(160%);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-top-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .brand-title {
+            font-size: 18px; font-weight: 900; letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #ffffff, var(--primary), #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: textShine 4s linear infinite;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255, 26, 64, 0.5);
+        }
+        @keyframes textShine { to { background-position: 200% center; } }
+
+        /* --- HEADER RIGHT BUTTONS GROUP --- */
+        .header-btns {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* --- ACTION BUTTONS --- */
+        .action-pill-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(255, 26, 64, 0.2);
+        }
+        .action-pill-btn:hover {
+            background: #ffffff;
+            color: #0a0304;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transform: translateY(-1px);
+        }
+        .action-pill-btn:active { transform: scale(0.92); }
+        .action-pill-btn .material-icons-round { font-size: 14px; }
+
+        .donate-btn {
+            background: rgba(255, 26, 64, 0.2);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 26, 64, 0.4);
+        }
+        .donate-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(255, 26, 64, 0.8);
+        }
+
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .keywords-btn {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+        }
+        .keywords-btn:hover {
+            background: #ffffff;
+            color: #111;
+        }
+
+        @media(max-width: 520px) {
+            .header-top-row { flex-direction: column; gap: 10px; }
+            .header-btns { width: 100%; justify-content: center; flex-wrap: wrap; }
+            .brand-title { margin: 0; }
+        }
+
+        /* --- MODALS --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 3, 4, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+            animation: fadeInModal 0.25s ease-out;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-box {
+            background: linear-gradient(180deg, rgba(35, 10, 15, 0.95) 0%, rgba(10, 3, 4, 0.98) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            padding: 24px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 26, 64, 0.35);
+            position: relative;
+            transform: scale(0.95);
+            animation: popModal 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        @keyframes popModal {
+            to { transform: scale(1); }
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            z-index: 10;
+        }
+        .modal-close-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .modal-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .modal-subtitle {
+            font-size: 11px;
+            color: var(--text-dim);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        /* --- COLOR PICKER STYLING --- */
+        .color-picker-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .color-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .color-row label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .color-row input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: none;
+        }
+        .color-row input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        .color-row input[type="color"]::-webkit-color-swatch { border: 2px solid #ffffff; border-radius: 50%; }
+
+        /* --- KEYWORDS LIST STYLING --- */
+        .keywords-scroll-area {
+            overflow-y: auto;
+            max-height: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 4px;
+        }
+        .keyword-row {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 26, 64, 0.3);
+            border-radius: 10px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .keyword-text {
+            font-size: 11px;
+            color: #ffffff;
+            word-break: break-all;
+            font-family: monospace;
+            text-align: left;
+        }
+        .kw-copy-btn {
+            background: rgba(255, 26, 64, 0.25);
+            border: 1px solid var(--primary);
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 800;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+        .kw-copy-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* --- QR CODE & UPI STYLING --- */
+        .qr-container {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 14px;
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 14px;
+            box-shadow: 0 0 25px rgba(255, 26, 64, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+        }
+        .upi-box {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .upi-text {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .copy-upi-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(255, 26, 64, 0.4);
+        }
+        .copy-upi-btn:hover { background: #ffffff; color: var(--bg-base); }
+
+        .social-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-item-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        .social-item-btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            fill: currentColor;
+        }
+        .social-btn-tg:hover {
+            background: rgba(255, 26, 64, 0.2);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 26, 64, 0.5);
+            transform: translateY(-2px);
+        }
+        .social-btn-ig:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .social-btn-yt:hover {
+            background: rgba(255, 0, 51, 0.25);
+            border-color: #ff0033;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* --- RED SETUP EMOJI --- */
+        .sad-emoji-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0 10px;
+        }
+        .sad-face {
+            width: 76px;
+            height: 76px;
+            background: radial-gradient(circle at 35% 35%, #ffffff, #ff1a40);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 25px rgba(255, 26, 64, 0.6), inset 0 2px 6px rgba(255, 255, 255, 0.6);
+            animation: sadWobble 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes sadWobble {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(4px) rotate(-4deg); }
+            100% { transform: translateY(0) rotate(3deg); }
+        }
+        .sad-eye {
+            position: absolute;
+            top: 24px;
+            width: 9px;
+            height: 12px;
+            background: #0a0304;
+            border-radius: 50%;
+        }
+        .sad-eye.left { left: 22px; }
+        .sad-eye.right { right: 22px; }
+        .sad-mouth {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 14px;
+            border: 3.5px solid #0a0304;
+            border-color: #0a0304 transparent transparent transparent;
+            border-radius: 50% 50% 0 0;
+            animation: sadMouthPout 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes sadMouthPout {
+            0% { transform: translateX(-50%) scaleY(1); }
+            100% { transform: translateX(-50%) scaleY(1.3); }
+        }
+        .sad-tear {
+            position: absolute;
+            top: 36px;
+            right: 20px;
+            width: 6px;
+            height: 10px;
+            background: #ffffff;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0 0 8px #ffffff;
+            animation: tearDrip 1.6s ease-in infinite;
+        }
+        @keyframes tearDrip {
+            0% { opacity: 0; transform: translateY(0) scale(0.6); }
+            40% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(18px) scale(1.1); }
+        }
+
+        /* Server Toggle */
+        .server-selector {
+            display: flex; background: rgba(0,0,0,0.85);
+            padding: 4px; border-radius: 50px;
+            border: 1px solid var(--border-light);
+        }
+        .server-opt input { display: none; }
+        .server-opt span {
+            display: block; padding: 5px 16px;
+            font-size: 10px; font-weight: 700; color: var(--text-dim);
+            border-radius: 40px; cursor: pointer; transition: 0.2s ease;
+            letter-spacing: 1px;
+        }
+        .server-opt input:checked + span {
+            background: var(--primary); color: #fff;
+            box-shadow: 0 0 15px var(--border-glow);
+        }
+
+        /* Search Bar */
+        .search-container {
+            width: 100%; display: flex; align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(16px) saturate(150%);
+            -webkit-backdrop-filter: blur(16px) saturate(150%);
+            border: 1px solid rgba(255, 26, 64, 0.35);
+            border-radius: 14px; padding: 5px;
+            transition: all 0.3s ease;
+        }
+        .search-container:focus-within {
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 26, 64, 0.4);
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .search-input {
+            flex-grow: 1; background: transparent; border: none;
+            color: #fff; padding: 10px 12px; font-size: 14px; font-weight: 500;
+            font-family: inherit;
+        }
+        .search-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+        
+        .cancel-btn {
+            display: none; width: 34px; height: 34px; border-radius: 10px;
+            background: rgba(255, 0, 51, 0.15); color: var(--danger);
+            border: 1px solid rgba(255, 0, 51, 0.4);
+            align-items: center; justify-content: center;
+            cursor: pointer; margin-right: 6px; transition: 0.2s;
+        }
+        .cancel-btn:active { transform: scale(0.9); }
+        
+        .search-btn {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; border: none; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: 0.2s ease; box-shadow: 0 4px 15px rgba(255, 26, 64, 0.5);
+        }
+        .search-btn:active { transform: scale(0.9); box-shadow: 0 0 5px var(--primary); }
+
+        /* --- FILTERS --- */
+        .category-filters {
+            display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; width: 100%;
+        }
+        .cat-btn {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-dim); padding: 6px 12px; border-radius: 8px;
+            font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .cat-btn:active { transform: scale(0.92); }
+        .cat-btn.active {
+            background: rgba(255, 26, 64, 0.25); color: #fff; 
+            border-color: var(--primary); box-shadow: 0 0 15px rgba(255, 26, 64, 0.4), inset 0 0 10px rgba(255, 26, 64, 0.2);
+        }
+        .cat-btn.btn-splash { border-color: rgba(255, 255, 255, 0.3); color: #ffffff; }
+        .cat-btn.active.btn-splash { 
+            background: rgba(255, 255, 255, 0.15); border-color: #ffffff; 
+            color: #ffffff; box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .cat-btn.btn-store { border-color: rgba(255, 26, 64, 0.4); color: #ff4d6d; }
+        .cat-btn.active.btn-store { 
+            background: rgba(255, 26, 64, 0.2); border-color: var(--primary); 
+            color: #ffffff; box-shadow: inset 0 0 10px rgba(255, 26, 64, 0.3);
+        }
+        .cat-btn.btn-coming-soon { border-color: rgba(255, 255, 255, 0.2); color: #ffffff; }
+        .cat-btn.btn-coming-soon:hover {
+            background: rgba(255, 255, 255, 0.15); border-color: #ffffff; color: #fff;
+        }
+
+        /* Status & Progress */
+        .status-bar {
+            font-size: 11px; font-weight: 500; color: var(--text-dim);
+            display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+        }
+        .progress-bar {
+            flex-grow: 1; max-width: 150px; height: 4px; background: rgba(255,255,255,0.1); 
+            border-radius: 4px; overflow: hidden; display: none; position: relative;
+        }
+        .progress-fill {
+            height: 100%; background: var(--primary); width: 0%; 
+            transition: width 0.1s ease-out; box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* --- GRID & CARDS --- */
+        .content-area { max-width: 1400px; margin: 0 auto; padding: 10px 15px 40px; position: relative; z-index: 1; }
+        
+        .section-box { display: none; margin-bottom: 30px; }
+        
+        .section-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid var(--border-light);
+        }
+        .sec-title { font-size: 14px; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        .sec-icon { font-size: 20px; color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+        
+        .grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+            gap: 12px;
+        }
+        
+        @media(max-width: 500px) { 
+            .grid { 
+                grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); 
+                gap: 8px; 
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(30, 8, 12, 0.4) 0%, rgba(10,3,4,0.6) 100%);
+            backdrop-filter: blur(12px) saturate(150%);
+            -webkit-backdrop-filter: blur(12px) saturate(150%);
+            border: 1px solid rgba(255, 26, 64, 0.3); border-radius: 12px; 
+            overflow: hidden; display: flex; flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 26, 64, 0.4);
+            z-index: 10;
+        }
+        .card:active {
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(255, 26, 64, 0.6);
+        }
+        
+        .card-head {
+            padding: 6px 8px; background: rgba(0,0,0,0.4);
+            display: flex; justify-content: space-between; align-items: center; gap: 4px;
+        }
+        .tag { 
+            font-size: 7px; font-weight: 900; color: #fff; background: rgba(255,255,255,0.1); 
+            padding: 3px 5px; border-radius: 4px; letter-spacing: 0.5px; 
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .tag-p { background: rgba(255, 26, 64, 0.25); color: #ffffff; border: 1px solid rgba(255, 26, 64, 0.5); }
+        .tag-splash { background: rgba(255, 255, 255, 0.15); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); }
+        .tag-store { background: rgba(255, 26, 64, 0.2); color: #ff4d6d; border: 1px solid rgba(255, 26, 64, 0.4); }
+
+        .img-box {
+            background: #000; min-height: 80px; flex-grow: 1; display: flex; 
+            align-items: center; justify-content: center; padding: 6px; position: relative;
+        }
+        .img-box img { width: 100%; max-height: 100px; object-fit: contain; display: block; border-radius: 6px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8)); transition: 0.3s; }
+        .card:hover .img-box img { transform: scale(1.04); }
+        
+        .card-foot {
+            padding: 8px; border-top: 1px solid rgba(255, 26, 64, 0.2); background: rgba(0,0,0,0.4);
+            display: flex; justify-content: space-between; align-items: center; gap: 6px;
+        }
+        .fname { font-size: 9px; font-weight: 500; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        
+        .dl-btn {
+            width: 24px; height: 24px; flex-shrink: 0; border-radius: 6px;
+            background: rgba(255, 26, 64, 0.2); color: #fff;
+            display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.2s ease;
+            border: 1px solid rgba(255, 26, 64, 0.4);
+        }
+        .dl-btn:hover { background: var(--primary); color: #fff; box-shadow: 0 0 10px var(--border-glow); border-color: var(--primary); }
+        .dl-btn:active { transform: scale(0.85); }
+        .dl-btn i { font-size: 16px !important; }
+
+        .kit-btn {
+            flex-shrink: 0; border-radius: 6px; padding: 0 8px; height: 24px;
+            background: rgba(124, 58, 237, 0.35); color: #fff; font-size: 9px; font-weight: 900;
+            display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s ease;
+            border: 1px solid rgba(167, 139, 250, 0.6); letter-spacing: 0.5px;
+        }
+        .kit-btn:hover { background: #7c3aed; box-shadow: 0 0 10px rgba(124, 58, 237, 0.8); }
+
+        .empty-state {
+            display: none; text-align: center; padding: 50px 15px;
+            background: var(--bg-surface); border-radius: 20px; border: 1px dashed var(--border-light);
+            margin-top: 10px; backdrop-filter: blur(14px);
+        }
+        .empty-state .material-icons-round { font-size: 48px; color: var(--danger); text-shadow: 0 0 20px rgba(255, 26, 64, 0.5); margin-bottom: 10px; }
+        .empty-text { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: 1px; }
+        .empty-sub { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+
+        /* --- RED & WHITE SETUP AMBIENT BACKGROUND --- */
+        .coder-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+        .coder-bg svg {
+            width: 100vw;
+            height: 100vh;
+            filter: drop-shadow(0 0 40px rgba(255, 26, 64, 0.4));
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dna-backbone { fill: none; stroke: var(--primary); stroke-width: 1.5; opacity: 0.4; }
+        .dna-pulse-glow { fill: none; stroke: #ffffff; stroke-width: 2.5; opacity: 0.6; stroke-linecap: round; }
+        
+        .strand-wave-1 { stroke-dasharray: 80 250; animation: dnaFlow 4s linear infinite; }
+        .strand-wave-2 { stroke-dasharray: 50 300; animation: dnaFlow 6s linear infinite reverse; animation-delay: 0.3s; }
+        .strand-wave-3 { stroke-dasharray: 90 200; animation: dnaFlow 3s linear infinite; animation-delay: 0.6s; }
+
+        @keyframes dnaFlow {
+            0% { stroke-dashoffset: 1000; }
+            100% { stroke-dashoffset: -1000; }
+        }
+
+        /* --- PREMIUM GLOSSY EFFECTS --- */
+        .hero-section, .search-container { position: relative; }
+        .hero-section::before, .search-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+            pointer-events: none;
+        }
+        .hero-section::before { border-radius: 20px 20px 0 0; }
+        .search-container::before { border-radius: 14px 14px 0 0; }
+    </style>
+</head>
+<body>
+
+    <div class="coder-bg" aria-hidden="true">
+        <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+                <radialGradient id="neonGlow" cx="50%" cy="50%" r="65%">
+                    <stop id="glowStop" offset="0%" stop-color="#ff1a40" stop-opacity="0.35"/>
+                    <stop offset="100%" stop-color="#0a0304" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <rect width="1000" height="600" fill="url(#neonGlow)"/>
+            <path d="M -50 200 Q 150 50 350 200 T 750 200 T 1050 200" class="dna-backbone" />
+            <path d="M -50 200 Q 150 350 350 200 T 750 200 T 1050 200" class="dna-backbone" />
+            <path d="M -50 400 Q 200 250 450 400 T 950 400 T 1050 400" class="dna-backbone" />
+            <path d="M -50 400 Q 200 550 450 400 T 950 400 T 1050 400" class="dna-backbone" />
+            <path d="M -50 200 Q 150 50 350 200 T 750 200 T 1050 200" class="dna-pulse-glow strand-wave-1" />
+            <path d="M -50 200 Q 150 350 350 200 T 750 200 T 1050 200" class="dna-pulse-glow strand-wave-2" />
+            <path d="M -50 400 Q 200 250 450 400 T 950 400 T 1050 400" class="dna-pulse-glow strand-wave-3" />
+        </svg>
+    </div>
+
+    <!-- MODAL POPUP FOR COLOR THEME CUSTOMIZATION -->
+    <div id="themeModal" class="modal-overlay" onclick="closeThemeModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="toggleThemeModal()">
+                <span class="material-icons-round" style="font-size: 18px;">close</span>
+            </button>
+            <div class="modal-title">COLOR THEME</div>
+            <div class="modal-subtitle">Customize theme colors in real-time</div>
+            
+            <div class="color-picker-group">
+                <div class="color-row">
+                    <label>Primary Glow Color</label>
+                    <input type="color" id="primaryColorPicker" value="#ff1a40" oninput="changePrimaryColor(this.value)">
+                </div>
+                <div class="color-row">
+                    <label>Background Color</label>
+                    <input type="color" id="bgColorPicker" value="#0a0304" oninput="changeBgColor(this.value)">
+                </div>
+            </div>
+            
+            <button type="button" class="copy-upi-btn" style="width: 100%; margin-top: 5px;" onclick="resetColors()">RESET TO DEFAULT</button>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP FOR KEYWORDS LIST -->
+    <div id="keywordsModal" class="modal-overlay" onclick="closeKeywordsModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="toggleKeywordsModal()">
+                <span class="material-icons-round" style="font-size: 18px;">close</span>
+            </button>
+            <div class="modal-title" style="color: #ffffff;">EVENT KEYWORDS</div>
+            <div class="modal-subtitle">Click copy to use keyword in search engine</div>
+            
+            <div class="keywords-scroll-area">
+                <div class="keyword-row">
+                    <span class="keyword-text">EmoteRoyaleNarutoEmotes</span>
+                    <button type="button" class="kw-copy-btn" onclick="copyKeyword('EmoteRoyaleNarutoEmotes', this)">COPY</button>
+                </div>
+                <div class="keyword-row">
+                    <span class="keyword-text">FadedWheelWrathOfTheNineTailsArrivalAnimation</span>
+                    <button type="button" class="kw-copy-btn" onclick="copyKeyword('FadedWheelWrathOfTheNineTailsArrivalAnimation', this)">COPY</button>
+                </div>
+                <div class="keyword-row">
+                    <span class="keyword-text">WrathOfTheNineTails</span>
+                    <button type="button" class="kw-copy-btn" onclick="copyKeyword('WrathOfTheNineTails', this)">COPY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP FOR FEEDBACK & SOCIALS -->
+    <div id="feedbackModal" class="modal-overlay" onclick="closeFeedbackModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="toggleFeedbackModal()">
+                <span class="material-icons-round" style="font-size: 18px;">close</span>
+            </button>
+            <div class="modal-title">CONNECT WITH US</div>
+            <div class="modal-subtitle">Choose your preferred platform for feedback & updates</div>
+            
+            <div class="social-links-list">
+                <a href="https://t.me/fawadgamingofficial" target="_blank" class="social-item-btn social-btn-tg">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-2.03 1.29-5.74 3.79-.54.37-1.03.55-1.47.54-.48-.01-1.4-.27-2.09-.49-.84-.27-1.51-.42-1.45-.89.03-.25.38-.51 1.05-.78 4.12-1.79 6.87-2.97 8.24-3.55 3.92-1.63 4.73-1.92 5.26-1.93.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.31z"/></svg>
+                    <span>Telegram Community</span>
+                </a>
+
+                <a href="https://www.instagram.com/fawadgamingofficial/" target="_blank" class="social-item-btn social-btn-ig">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span>Instagram Profile</span>
+                </a>
+
+                <a href="https://www.youtube.com/@fawadgamingofficial" target="_blank" class="social-item-btn social-btn-yt">
+                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>YouTube Channel</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMING SOON MODAL -->
+    <div id="comingSoonModal" class="modal-overlay" onclick="closeComingSoonModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="toggleComingSoonModal()">
+                <span class="material-icons-round" style="font-size: 18px;">close</span>
+            </button>
+            <div class="sad-emoji-wrapper">
+                <div class="sad-face">
+                    <div class="sad-eye left"></div>
+                    <div class="sad-eye right"></div>
+                    <div class="sad-tear"></div>
+                    <div class="sad-mouth"></div>
+                </div>
+            </div>
+            <div class="modal-title" style="color: var(--primary); margin-top: 10px;">UNDER DEVELOPMENT</div>
+            <div class="modal-subtitle" style="line-height: 1.6; margin-top: 8px;">
+                Ye feature abhi ready nahi hai, ispe kaam chal raha hai.<br>
+                <span style="color: #fff; font-weight: 700;">Coming Soon with big updates!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DONATE / QR CODE MODAL -->
+    <div id="donateModal" class="modal-overlay" onclick="closeDonateModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="toggleDonateModal()">
+                <span class="material-icons-round" style="font-size: 18px;">close</span>
+            </button>
+            <div class="modal-title" style="color: #ffffff;">SUPPORT & DONATE</div>
+            <div class="modal-subtitle">Scan QR code or copy Binance ID to support my work</div>
+            
+            <div class="qr-container">
+                <img src="" alt="Donate QR Code" id="donateQrImg">
+            </div>
+
+            <div class="upi-box">
+                <span class="upi-text" id="upiIdText">782942422</span>
+                <button type="button" class="copy-upi-btn" onclick="copyUpiId()">COPY ID</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('donateQrImg').src = "donateQrImg.jpeg";
+    </script>
+
+    <div class="hero-wrapper">
+        <div class="hero-section">
+            <div class="header-top-row">
+                <div class="brand-title">FAWAD Gaming</div>
+                <div class="header-btns">
+                    <button type="button" class="action-pill-btn theme-btn" onclick="toggleThemeModal()">
+                        <span class="material-icons-round">palette</span>
+                        <span>COLOR THEME</span>
+                    </button>
+                    <button type="button" class="action-pill-btn keywords-btn" onclick="toggleKeywordsModal()">
+                        <span class="material-icons-round">key</span>
+                        <span>KEYWORDS</span>
+                    </button>
+                    <button type="button" class="action-pill-btn donate-btn" onclick="toggleDonateModal()">
+                        <span class="material-icons-round">volunteer_activism</span>
+                        <span>DONATE</span>
+                    </button>
+                    <button type="button" class="action-pill-btn" onclick="toggleFeedbackModal()">
+                        <span class="material-icons-round">chat</span>
+                        <span>FEEDBACK</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="server-selector">
+                <label class="server-opt">
+                    <input type="radio" name="searchMode" value="single" checked>
+                    <span class="tab">SINGLE WORD</span>
+                </label>
+                <label class="server-opt">
+                    <input type="radio" name="searchMode" value="multi">
+                    <span class="tab">MULTI WORD ( , )</span>
+                </label>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="keyword" class="search-input" placeholder="Enter Keyword(s)..." autocomplete="off">
+                <button id="cancelBtn" class="cancel-btn" onclick="stopScan()">
+                    <span class="material-icons-round" style="font-size:18px">close</span>
+                </button>
+                <button class="search-btn" onclick="startEngine()">
+                    <span class="material-icons-round">search</span>
+                </button>
+            </div>
+
+            <div class="category-filters" id="categoryFilters">
+                <button class="cat-btn active" onclick="setCategory('ALL')">ALL EVENTS</button>
+                <button class="cat-btn btn-store" onclick="setCategory('STORE')">STORE</button>
+                <button class="cat-btn btn-splash" onclick="setCategory('SPLASH')">SPLASH</button>
+                <button class="cat-btn btn-splash" onclick="setCategory('TOPUP')">TOP UP</button>
+                <button class="cat-btn" onclick="setCategory('TW')">TW (Ring)</button>
+                <button class="cat-btn" onclick="setCategory('DW')">DW (StepUp)</button>
+                <button class="cat-btn" onclick="setCategory('FW')">FW (Faded)</button>
+                <button class="cat-btn" onclick="setCategory('MOCO')">MOCO</button>
+                <button class="cat-btn" onclick="setCategory('TT')">TT (Token)</button>
+                <button class="cat-btn" onclick="setCategory('ROYALE')">ROYALE (OT1-OT3)</button>
+                <button type="button" class="cat-btn btn-coming-soon" onclick="toggleComingSoonModal()">COMING SOON</button>
+            </div>
+
+            <!-- BOUNCING BALL ANIMATION CONTAINER -->
+            <div id="scanAnim" class="scan-animation-container">
+                <div class="bouncing-ball"></div>
+            </div>
+
+            <div class="status-bar">
+                <span id="statusTxt">Developed By FAWAD Gaming</span>
+                <div class="progress-bar" id="pBar"><div class="progress-fill" id="pFill"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <div id="sec-eventdata" class="section-box">
+            <div class="section-header">
+                <span class="material-icons-round sec-icon" style="color:#fbbf24; text-shadow:0 0 10px #fbbf24;">event</span>
+                <span class="sec-title" style="color:#fbbf24;">EVENT DATA — LIVE GARENA EVENTS</span>
+            </div>
+            <div class="grid" id="grid-eventdata"></div>
+        </div>
+
+        <div id="sec-splash" class="section-box">
+            <div class="section-header">
+                <span class="material-icons-round sec-icon" style="color:#ffffff; text-shadow:0 0 10px #ffffff;">stars</span>
+                <span class="sec-title" style="color:#ffffff;">SPLASH & TOP UP ASSETS</span>
+            </div>
+            <div class="grid" id="grid-splash"></div>
+        </div>
+
+        <div id="sec-store" class="section-box">
+            <div class="section-header">
+                <span class="material-icons-round sec-icon" style="color:var(--primary); text-shadow:0 0 10px var(--primary);">store</span>
+                <span class="sec-title" style="color:var(--primary);">STORE ASSETS</span>
+            </div>
+            <div class="grid" id="grid-store"></div>
+        </div>
+
+        <div id="regions-wrapper"></div>
+        
+        <div id="noData" class="empty-state">
+            <span class="material-icons-round">search_off</span>
+            <div class="empty-text">NO ASSETS DETECTED</div>
+            <div class="empty-sub">Verify the keyword or adjust the event filters.</div>
+        </div>
+    </div>
+
+    <script>
+        const regions = ['IND', 'BD', 'SG', 'PK', 'EU', 'NA']; 
+        const suffixes = ["en.jpg", "en.png", "ru.jpg"]; 
+        const configPath = "/common/Local/IND/config/";
+        const splashPath = "/common/Local/BD/Splashanno/"; 
+
+        // FIX 2026-11-06: date codes were frozen at 26S16-26S31 (old season).
+        // Garena season codes follow the ISO week, so they are now generated
+        // from today's date: last 12 weeks up to next week. No more manual updates.
+        function isoWeek(d) {
+            const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+            const day = (t.getUTCDay() + 6) % 7;
+            t.setUTCDate(t.getUTCDate() - day + 3);
+            const first = new Date(Date.UTC(t.getUTCFullYear(), 0, 4));
+            const fday = (first.getUTCDay() + 6) % 7;
+            first.setUTCDate(first.getUTCDate() - fday + 3);
+            return { y: t.getUTCFullYear() % 100, w: 1 + Math.round((t - first) / (7 * 864e5)) };
+        }
+        const dateCodes = (() => {
+            const { y, w } = isoWeek(new Date());
+            const out = [];
+            for (let i = 12; i >= -1; i--) {
+                let ww = w - i, yy = y;
+                if (ww < 1) { ww += 52; yy = (y + 99) % 100; }
+                if (ww > 52) { ww -= 52; yy = (y + 1) % 100; }
+                out.push(String(yy).padStart(2, "0") + "S" + ww);
+            }
+            return out;
+        })();
+
+        // FIX 2026-11-06: new splash naming. Current events publish their banner as
+        // /common/Local/IND/config/1750x1070_<Name>Splash<MMDD><REGION>_en.jpg
+        // e.g. 1750x1070_WonderVaultSKORPxM7Splash1109IND_en.jpg (verified live).
+        // The old Splashanno/1750x1070_<keyword>_en.jpg pattern is kept as fallback.
+        function splashDates() {
+            const out = [];
+            const d = new Date();
+            for (let i = -10; i <= 10; i++) {
+                const t = new Date(d);
+                t.setDate(d.getDate() + i);
+                out.push(String(t.getMonth() + 1).padStart(2, "0") + String(t.getDate()).padStart(2, "0"));
+            }
+            return out;
+        }
+        // Keyword variants for the new splash pattern: the banner name sometimes
+        // differs from the typed keyword in case / trailing region code, e.g.
+        // WonderVaultSkorpXM7SG -> WonderVaultSKORPxM7
+        function keywordVariants(kw) {
+            const set = new Set([kw]);
+            let base = kw;
+            for (const r of ["IND", "BD", "SG", "PK", "EU", "NA"]) {
+                if (base.toUpperCase().endsWith(r)) { base = base.slice(0, -r.length); break; }
+            }
+            set.add(base);
+            set.add(base.replace(/Skorp/g, "SKORP"));
+            set.add(base.replace(/XM7/g, "xM7"));
+            set.add(base.replace(/Skorp/g, "SKORP").replace(/XM7/g, "xM7"));
+            return [...set].filter(Boolean);
+        }
+
+        const eventGroups = {
+            "ALL": ["TW1", "TW2", "TW3", "TW4", "TW5", "TW6", "DW1", "DW2", "DW3", "DW4", "WV1", "FW1", "FW2", "FW3", "FW4", "MocoStore", "MocoStore1", "MocoStore2", "MocoStore3", "TT1", "TT2", "OT1", "OT2", "OT3"],
+            "TW": ["TW1", "TW2", "TW3", "TW4", "TW5", "TW6"],
+            "DW": ["DW1", "DW2", "DW3", "DW4", "WV1"],
+            "FW": ["FW1", "FW2", "FW3", "FW4"],
+            "MOCO": ["MocoStore", "MocoStore1", "MocoStore2", "MocoStore3"],
+            "TT": ["TT1", "TT2"],
+            "ROYALE": ["OT1", "OT2", "OT3"],
+            "TOPUP": [],
+            "STORE": []
+        };
+
+        let currentCategory = "ALL";
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const keyword = document.getElementById('keyword').value.trim();
+            if(keyword) startEngine();
+        }
+
+        /* --- COLOR THEME MODAL LOGIC --- */
+        function toggleThemeModal() {
+            const modal = document.getElementById('themeModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeThemeModal(event) {
+            const modal = document.getElementById('themeModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function changePrimaryColor(color) {
+            document.documentElement.style.setProperty('--primary', color);
+            document.documentElement.style.setProperty('--border-glow', color);
+            document.documentElement.style.setProperty('--border-light', color + '40');
+            const glowStop = document.getElementById('glowStop');
+            if(glowStop) glowStop.setAttribute('stop-color', color);
+        }
+
+        function changeBgColor(color) {
+            document.documentElement.style.setProperty('--bg-base', color);
+        }
+
+        function resetColors() {
+            changePrimaryColor('#ff1a40');
+            changeBgColor('#0a0304');
+            document.getElementById('primaryColorPicker').value = '#ff1a40';
+            document.getElementById('bgColorPicker').value = '#0a0304';
+        }
+
+        /* --- KEYWORDS MODAL & COPY LOGIC --- */
+        function toggleKeywordsModal() {
+            const modal = document.getElementById('keywordsModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeKeywordsModal(event) {
+            const modal = document.getElementById('keywordsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function copyKeyword(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerText = 'COPIED!';
+                btn.style.background = '#ffffff';
+                btn.style.color = '#000000';
+                setTimeout(() => {
+                    btn.innerText = 'COPY';
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 1500);
+            });
+        }
+
+        /* --- FEEDBACK MODAL CONTROLS --- */
+        function toggleFeedbackModal() {
+            const modal = document.getElementById('feedbackModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeFeedbackModal(event) {
+            const modal = document.getElementById('feedbackModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        /* --- COMING SOON MODAL CONTROLS --- */
+        function toggleComingSoonModal() {
+            const modal = document.getElementById('comingSoonModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeComingSoonModal(event) {
+            const modal = document.getElementById('comingSoonModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        /* --- DONATE MODAL CONTROLS --- */
+        function toggleDonateModal() {
+            const modal = document.getElementById('donateModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function closeDonateModal(event) {
+            const modal = document.getElementById('donateModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function copyUpiId() {
+            const upiText = document.getElementById('upiIdText').innerText;
+            navigator.clipboard.writeText(upiText).then(() => {
+                const btn = document.querySelector('.copy-upi-btn');
+                btn.innerText = 'COPIED!';
+                setTimeout(() => { btn.innerText = 'COPY ID'; }, 2000);
+            });
+        }
+
+        const regionWrap = document.getElementById('regions-wrapper');
+        regions.forEach(reg => {
+            regionWrap.insertAdjacentHTML('beforeend', `
+                <div id="sec-${reg}" class="section-box">
+                    <div class="section-header">
+                        <span class="material-icons-round sec-icon">tab</span>
+                        <span class="sec-title">${reg} SERVER ASSETS</span>
+                    </div>
+                    <div class="grid" id="grid-${reg}"></div>
+                </div>
+            `);
+        });
+
+        let globalScanId = 0;
+        let foundAssets = new Set();
+        let lastCacheKey = '';
+        let foundList = [];
+        const scanCache = new Map(); // keyword|category -> found tasks (instant re-scan)
+        let totalItems = 0;
+        let processedItems = 0;
+
+        function stopScan() {
+            globalScanId++; 
+            document.getElementById('cancelBtn').style.display = 'none';
+            document.getElementById('pBar').style.display = 'none';
+            document.getElementById('scanAnim').style.display = 'none';
+            document.getElementById('statusTxt').innerHTML = "<span style='color:var(--danger)'>Scan Aborted.</span>";
+        }
+
+        async function startEngine() {
+            const input = document.getElementById('keyword');
+            const rawInput = input.value.trim();
+            const mode = document.querySelector('input[name="searchMode"]:checked').value;
+            const server = "https://dl.dir.freefiremobile.com"; 
+
+            if (!rawInput) { input.focus(); return; }
+
+            let keywords = mode === 'multi' ? rawInput.split(',').map(k => k.trim()).filter(k => k.length > 0) : [rawInput];
+
+            const cacheKey = keywords.join(',') + '|' + currentCategory;
+            lastCacheKey = cacheKey;
+            if (scanCache.has(cacheKey)) {
+                const cached = scanCache.get(cacheKey);
+                document.querySelectorAll('.grid').forEach(g => g.innerHTML = '');
+                document.querySelectorAll('.section-box').forEach(s => s.style.display = 'none');
+                document.getElementById('noData').style.display = 'none';
+                cached.forEach(t => createCard(t));
+                document.getElementById('statusTxt').innerHTML = "<span style='color:#ffffff; font-weight:700;'>Cached Scan Complete! " + cached.length + " found.</span>";
+                if (cached.length === 0) document.getElementById('noData').style.display = 'block';
+                fetchEventData(keywords, globalScanId);
+                return;
+            }
+
+            globalScanId++;
+            const myScanId = globalScanId;
+            foundAssets.clear();
+            foundList = [];
+            eventMatches = 0;
+            processedItems = 0;
+            
+            document.querySelectorAll('.grid').forEach(g => g.innerHTML = '');
+            document.querySelectorAll('.section-box').forEach(s => s.style.display = 'none');
+            document.getElementById('noData').style.display = 'none';
+            document.getElementById('cancelBtn').style.display = 'flex';
+            document.getElementById('pBar').style.display = 'block';
+            document.getElementById('pFill').style.width = '0%';
+            
+            document.getElementById('scanAnim').style.display = 'flex';
+
+            // EVENT DATA: live Garena event feed for the same keyword, in parallel
+            fetchEventData(keywords, myScanId);
+            
+            let queue = [];
+            
+            keywords.forEach(keyword => {
+                if (currentCategory === 'ALL' || currentCategory === 'STORE') {
+                    dateCodes.forEach(dateCode => {
+                        regions.forEach(reg => {
+                            suffixes.forEach(suf => {
+                                let f1 = `252x256_${keyword}_${dateCode}_${reg}_${suf}`;
+                                queue.push({ url: server + configPath + f1, grp: 'store', type: 'STORE 252x256', pre: dateCode, fname: f1 });
+
+                                let f2 = `${keyword}_256x107_${suf}`;
+                                queue.push({ url: server + configPath + f2, grp: 'store', type: 'STORE BANNER', pre: reg, fname: f2 });
+
+                                let f3 = `1500x750_${keyword}_${dateCode}_${reg}_${suf}`;
+                                queue.push({ url: server + configPath + f3, grp: 'store', type: 'STORE 1500x750', pre: dateCode, fname: f3 });
+                            });
+                        });
+                    });
+                }
+
+                if (currentCategory === 'ALL' || currentCategory === 'SPLASH') {
+                    suffixes.forEach(suf => {
+                        let fname = `1750x1070_${keyword}_${suf}`;
+                        queue.push({ url: server + splashPath + fname, grp: 'splash', type: 'SPLASH', pre: 'PRIORITY', fname: fname });
+                    });
+                    // NEW splash naming (see note above): config/ + Splash + MMDD + region
+                    splashDates().forEach(mmdd => {
+                        regions.forEach(reg => {
+                            keywordVariants(keyword).forEach(v => {
+                                let fname = `1750x1070_${v}Splash${mmdd}${reg}_en.jpg`;
+                                queue.push({ url: server + configPath + fname, grp: 'splash', type: 'SPLASH (NEW)', pre: mmdd + ' ' + reg, fname: fname });
+                            });
+                        });
+                    });
+                }
+                
+                if (currentCategory === 'ALL' || currentCategory === 'TOPUP') {
+                    suffixes.forEach(suf => {
+                        let fname1 = `${keyword}TopUp_${suf}`;
+                        queue.push({ url: server + configPath + fname1, grp: 'splash', type: 'TOP UP', pre: 'PRIORITY', fname: fname1 });
+                        
+                        let fname2 = `${keyword}_${suf}`;
+                        queue.push({ url: server + configPath + fname2, grp: 'splash', type: 'TOP UP', pre: 'PRIORITY', fname: fname2 });
+
+                        dateCodes.forEach(dateCode => {
+                            let fname3 = `252x256_${keyword}TopUp_${dateCode}_${suf}`;
+                            queue.push({ url: server + configPath + fname3, grp: 'splash', type: 'TOP UP', pre: dateCode, fname: fname3 });
+
+                            let fname4 = `252x256_${keyword}_${dateCode}_${suf}`;
+                            queue.push({ url: server + configPath + fname4, grp: 'splash', type: 'TOP UP', pre: dateCode, fname: fname4 });
+                        });
+                    });
+                }
+
+                if (currentCategory === 'ALL' || currentCategory === 'TT') {
+                    suffixes.forEach(suf => {
+                        let ttStatic1 = `1500x750_${keyword}_${suf}`;
+                        queue.push({ url: server + configPath + ttStatic1, grp: 'IND', type: 'TT BANNER', pre: 'STATIC', fname: ttStatic1 });
+
+                        let ttStatic2 = `540x108_${keyword}_${suf}`;
+                        queue.push({ url: server + configPath + ttStatic2, grp: 'IND', type: 'TT BAR', pre: 'STATIC', fname: ttStatic2 });
+
+                        let ttStatic3 = `512x182_${keyword}_${suf}`;
+                        queue.push({ url: server + configPath + ttStatic3, grp: 'IND', type: 'TT ICON', pre: 'STATIC', fname: ttStatic3 });
+                    });
+                }
+
+                if (currentCategory !== 'SPLASH' && currentCategory !== 'TOPUP' && currentCategory !== 'STORE') {
+                    const activeEventCodes = eventGroups[currentCategory];
+                    dateCodes.forEach(dateCode => {
+                        activeEventCodes.forEach(eventCode => {
+                            regions.forEach(reg => {
+                                suffixes.forEach(suf => {
+                                    if (eventCode.startsWith('OT')) {
+                                        let tabName = `${dateCode}_${eventCode}_${keyword}_Tab_${reg}_${suf}`;
+                                        queue.push({ url: server + configPath + tabName, grp: reg, type: 'ROYALE TAB', pre: `${dateCode}_${eventCode}`, fname: tabName });
+
+                                        let lobbyName = `${dateCode}_${eventCode}_${keyword}_LobbyBG_${reg}_${suf}`;
+                                        queue.push({ url: server + configPath + lobbyName, grp: reg, type: 'ROYALE LOBBY', pre: `${dateCode}_${eventCode}`, fname: lobbyName });
+
+                                        let posterName = `${dateCode}_${eventCode}_${keyword}_Poster_${reg}_${suf}`;
+                                        queue.push({ url: server + configPath + posterName, grp: reg, type: 'ROYALE POSTER', pre: `${dateCode}_${eventCode}`, fname: posterName });
+                                    } else {
+                                        let tabName = `${dateCode}_${eventCode}_${keyword}_Tab_${reg}_${suf}`;
+                                        queue.push({ url: server + configPath + tabName, grp: reg, type: 'EVENT TAB', pre: `${dateCode}_${eventCode}`, fname: tabName });
+
+                                        let posterName = `${dateCode}_${eventCode}_${keyword}_Poster_${reg}_${suf}`;
+                                        queue.push({ url: server + configPath + posterName, grp: reg, type: 'EVENT POSTER', pre: `${dateCode}_${eventCode}`, fname: posterName });
+                                        
+                                        if (eventCode.startsWith('TW')) {
+                                            let lobbyBg = `${dateCode}_${eventCode}_${keyword}_LobbyBG_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + lobbyBg, grp: reg, type: 'LOBBY BG', pre: `${dateCode}_${eventCode}`, fname: lobbyBg });
+                                            
+                                            let wheelBg = `${dateCode}_${eventCode}_${keyword}_WheelBG_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + wheelBg, grp: reg, type: 'WHEEL BG', pre: `${dateCode}_${eventCode}`, fname: wheelBg });
+                                            
+                                            let title = `${dateCode}_${eventCode}_${keyword}_Title_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + title, grp: reg, type: 'TITLE', pre: `${dateCode}_${eventCode}`, fname: title });
+                                        }
+
+                                        if (eventCode.startsWith('DW') || eventCode.startsWith('WV')) {
+                                            let title = `${dateCode}_${eventCode}_${keyword}_Title_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + title, grp: reg, type: 'STEPUP TITLE', pre: `${dateCode}_${eventCode}`, fname: title });
+
+                                            let lobbyBg = `${dateCode}_${eventCode}_${keyword}_LobbyBG_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + lobbyBg, grp: reg, type: 'STEPUP LOBBY', pre: `${dateCode}_${eventCode}`, fname: lobbyBg });
+
+                                            let dWheelBg = `${dateCode}_${eventCode}_${keyword}_DoubleWheelBG_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + dWheelBg, grp: reg, type: 'DOUBLE WHEEL BG', pre: `${dateCode}_${eventCode}`, fname: dWheelBg });
+                                        }
+
+                                        if (eventCode.startsWith('TT')) {
+                                            let lobbyBubble = `${dateCode}_${eventCode}_${keyword}_LobbyBubble_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + lobbyBubble, grp: reg, type: 'TT BUBBLE', pre: `${dateCode}_${eventCode}`, fname: lobbyBubble });
+
+                                            let title = `${dateCode}_${eventCode}_${keyword}_Title_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + title, grp: reg, type: 'TT TITLE', pre: `${dateCode}_${eventCode}`, fname: title });
+                                        }
+                                        
+                                        if (eventCode.startsWith('FW')) {
+                                            let fwLobbyBg = `${dateCode}_${eventCode}_${keyword}_LobbyBG_${reg}_${suf}`;
+                                            queue.push({ url: server + configPath + fwLobbyBg, grp: reg, type: 'LOBBY BG', pre: `${dateCode}_${eventCode}`, fname: fwLobbyBg });
+                                        }
+                                    }
+                                });
+                            });
+                        });
+                    });
+                }
+            });
+
+            // SPEED: drop duplicate URLs (old code queued the same file many times)
+            queue = [...new Map(queue.map(t => [t.url, t])).values()];
+            totalItems = queue.length;
+            document.getElementById('statusTxt').innerText = `Blasting ${totalItems} paths in seconds...`;
+
+            // SPEED: 48 images in flight at once (was 400-at-a-time Promise.all,
+            // which thrashed the browser's per-host connection limit).
+            let qIdx = 0;
+            async function scanWorker() {
+                while (qIdx < queue.length) {
+                    if (myScanId !== globalScanId) return;
+                    const task = queue[qIdx++];
+                    await new Promise((resolve) => {
+                        if (myScanId !== globalScanId) { resolve(); return; }
+                        const img = new Image();
+                        img.referrerPolicy = "no-referrer";
+                        img.decoding = "async";
+                        img.onload = () => {
+                            processedItems++;
+                            if (myScanId === globalScanId && !foundAssets.has(task.url)) {
+                                foundAssets.add(task.url);
+                                foundList.push(task);
+                                createCard(task);
+                            }
+                            updateProgress();
+                            resolve();
+                        };
+                        img.onerror = () => {
+                            processedItems++;
+                            updateProgress();
+                            resolve();
+                        };
+                        img.src = task.url;
+                    });
+                }
+            }
+            await Promise.all(Array.from({ length: 48 }, scanWorker));
+
+            if (myScanId === globalScanId) finishScan();
+        }
+
+        function updateProgress() {
+            const pct = Math.floor((processedItems / totalItems) * 100);
+            document.getElementById('pFill').style.width = pct + "%";
+            const count = foundAssets.size;
+            if (count > 0) {
+                document.getElementById('statusTxt').innerHTML = `<span style='color:#ffffff; font-weight:700;'>Found: ${count}</span> | ${pct}%`;
+            } else {
+                document.getElementById('statusTxt').innerText = `Scanning... ${pct}%`;
+            }
+        }
+
+        function finishScan() {
+            document.getElementById('pBar').style.display = 'none';
+            document.getElementById('cancelBtn').style.display = 'none';
+            document.getElementById('scanAnim').style.display = 'none';
+            
+            scanCache.set(lastCacheKey, [...foundList]);
+            if (foundAssets.size === 0) {
+                if (eventMatches > 0) {
+                    document.getElementById('statusTxt').innerHTML = "<span style='color:#ffffff; font-weight:700;'>Scan Complete. 0 CDN assets — but " + eventMatches + " live event(s) found above.</span>";
+                } else {
+                    document.getElementById('statusTxt').innerHTML = "<span style='color:var(--danger)'>Scan Complete. 0 assets found.</span>";
+                    document.getElementById('noData').style.display = 'block';
+                }
+            } else {
+                document.getElementById('statusTxt').innerHTML = "<span style='color:#ffffff; font-weight:700;'>Lightning Fast Scan Complete! " + foundAssets.size + " found.</span>";
+            }
+        }
+
+        // EVENT KIT 2026-11-06: Garena no longer publishes Title/BG (TW set) files for
+        // new events — only the splash banner exists on the public CDN (verified:
+        // Magma Ring + Wonder Vault probed across all hosts/paths, 0 TW files).
+        // So the site now BUILDS the kit from the found splash: Title (rendered
+        // text, transparent PNG), BG (splash art) and Banner (original splash).
+        function prettyEventName(kw) {
+            let s = (kw || '').trim();
+            for (const r of ['IND','BD','SG','PK','EU','NA']) {
+                if (s.toUpperCase().endsWith(r) && s.length > r.length) { s = s.slice(0, -r.length); break; }
+            }
+            s = s.replace(/([A-Z])x([A-Z0-9])/g, '$1 x $2');
+            s = s.replace(/([a-z])([A-Z])/g, '$1 $2');
+            s = s.replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2');
+            s = s.replace(/([0-9])([A-Za-z])/g, '$1 $2');
+            s = s.replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
+            return s.toUpperCase().replace(/\bX\b/g, 'x');
+        }
+        function makeTitleCanvas(name) {
+            const words = name.split(' ');
+            let line1 = words, line2 = [];
+            if (words.length === 2) { line1 = [words[0]]; line2 = [words[1]]; }
+            else if (words.length > 2) { const mid = Math.ceil(words.length / 2); line1 = words.slice(0, mid); line2 = words.slice(mid); }
+            const size = 300;
+            const cv = document.createElement('canvas');
+            let ctx = cv.getContext('2d');
+            ctx.font = 'italic 900 ' + size + 'px "Arial Black", Arial, sans-serif';
+            const w1 = Math.ceil(ctx.measureText(line1.join(' ')).width);
+            const w2 = line2.length ? Math.ceil(ctx.measureText(line2.join(' ')).width) : 0;
+            cv.width = Math.max(w1, w2) + 90;
+            cv.height = line2.length ? size * 2 + 90 : size + 90;
+            ctx = cv.getContext('2d');
+            ctx.font = 'italic 900 ' + size + 'px "Arial Black", Arial, sans-serif';
+            ctx.textBaseline = 'top';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#1e0a46'; ctx.lineWidth = 16;
+            ctx.fillStyle = '#ffffff';
+            ctx.strokeText(line1.join(' '), 45, 25);
+            ctx.fillText(line1.join(' '), 45, 25);
+            if (line2.length) {
+                ctx.strokeText(line2.join(' '), 45, size + 15);
+                ctx.fillText(line2.join(' '), 45, size + 15);
+            }
+            return cv;
+        }
+        function downloadCanvas(canvas, filename, type) {
+            const a = document.createElement('a');
+            a.href = canvas.toDataURL(type || 'image/png');
+            a.download = filename;
+            a.click();
+        }
+        async function makeEventKit(url, fname) {
+            const kw = (document.getElementById('keyword').value || '').trim() || 'EVENT';
+            const name = prettyEventName(kw);
+            const titleCv = makeTitleCanvas(name);
+            let bgCv = null;
+            try {
+                const img = await new Promise((res, rej) => {
+                    const im = new Image();
+                    im.crossOrigin = 'anonymous';
+                    im.onload = () => res(im);
+                    im.onerror = rej;
+                    im.src = url;
+                });
+                bgCv = document.createElement('canvas');
+                bgCv.width = img.naturalWidth || 1750;
+                bgCv.height = img.naturalHeight || 1070;
+                bgCv.getContext('2d').drawImage(img, 0, 0);
+                bgCv.toDataURL('image/jpeg', 0.92);
+            } catch (e) { bgCv = null; }
+            openKitModal(name, fname, titleCv, bgCv, url);
+        }
+        function openKitModal(name, fname, titleCv, bgCv, url) {
+            closeKitModal();
+            const slug = name.replace(/\s+/g, '');
+            const m = document.createElement('div');
+            m.id = 'kitModal';
+            m.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;';
+            const box = document.createElement('div');
+            box.style.cssText = 'background:#160a24;border:1px solid #e11d48;border-radius:14px;max-width:520px;width:100%;padding:20px;color:#fff;';
+            box.innerHTML = '<h3 style="margin:0 0 4px;font-size:18px;">🎨 Event Kit — ' + name + '</h3>'
+                + '<p style="margin:0 0 14px;color:#c9b8e8;font-size:13px;line-height:1.5;">Garena ab Title/BG files publish nahi karta — sirf splash banner aata hai. Is liye kit splash se banaya gaya hai: Title transparent PNG hai, BG splash art hai.</p>'
+                + '<div style="display:flex;flex-direction:column;gap:10px;">'
+                + '<button id="kitTitleBtn" style="padding:12px;border-radius:10px;border:0;background:#e11d48;color:#fff;font-weight:700;cursor:pointer;">⬇ Title PNG (transparent)</button>'
+                + '<button id="kitBgBtn" style="padding:12px;border-radius:10px;border:0;background:#7c3aed;color:#fff;font-weight:700;cursor:pointer;">⬇ BG JPG (splash art)</button>'
+                + '<a href="' + url + '" download="' + fname + '" style="text-align:center;padding:12px;border-radius:10px;background:#27272a;color:#fff;font-weight:700;text-decoration:none;">⬇ Banner JPG (original splash)</a>'
+                + '<button id="kitCloseBtn" style="padding:10px;border-radius:10px;border:1px solid #555;background:transparent;color:#ddd;cursor:pointer;">Close</button>'
+                + '</div>';
+            m.appendChild(box);
+            document.body.appendChild(m);
+            m.addEventListener('click', e => { if (e.target === m) closeKitModal(); });
+            box.querySelector('#kitCloseBtn').onclick = closeKitModal;
+            box.querySelector('#kitTitleBtn').onclick = () => downloadCanvas(titleCv, slug + '_Title.png', 'image/png');
+            const bgBtn = box.querySelector('#kitBgBtn');
+            if (bgCv) {
+                bgBtn.onclick = () => downloadCanvas(bgCv, slug + '_BG.jpg', 'image/jpeg');
+            } else {
+                bgBtn.textContent = 'BG: splash se direct download karein (browser ne canvas block kiya)';
+                bgBtn.style.opacity = '0.65';
+                bgBtn.onclick = () => window.open(url, '_blank');
+            }
+        }
+        function closeKitModal() { const m = document.getElementById('kitModal'); if (m) m.remove(); }
+
+        // EVENT DATA 2026-11-08: keyword search also pulls Garena's LIVE event feed
+        // (vntgm open API — same source the FFLeaks site uses). A keyword can match
+        // a live event even when Garena has published NO image files for it yet
+        // (e.g. Wall Royale), so the user sees the event's title, dates, type and
+        // banner instead of an empty result. Runs in parallel with the CDN scan.
+        const API_REGIONS = { IND: 'in', BD: 'bd', SG: 'sg', PK: 'pk', BR: 'br', VN: 'vn', ID: 'id', TH: 'th' };
+        const API_BASE = 'https://ffvntgm-event-freefire.vercel.app/api/events?region=';
+        let eventMatches = 0;
+        function normStr(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+        function fmtEvDate(ts) {
+            const n = parseInt(ts, 10);
+            if (!n) return '—';
+            const d = new Date(n * 1000);
+            return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+        function createEventCard(ev, regLabel) {
+            const sec = document.getElementById('sec-eventdata');
+            if (sec) sec.style.display = 'block';
+            document.getElementById('noData').style.display = 'none';
+            const container = document.getElementById('grid-eventdata');
+            const cardWrapper = document.createElement('div');
+            const dates = fmtEvDate(ev.start) + ' → ' + fmtEvDate(ev.end);
+            const typeLabel = (ev.type || 'event').toUpperCase();
+            const linkBtn = ev.link ? `<a href="${ev.link}" target="_blank" class="dl-btn" title="Open event link" onclick="event.stopPropagation();"><i class="material-icons-round" style="font-size: 16px;">open_in_new</i></a>` : '';
+            cardWrapper.innerHTML = `
+                <div class="card">
+                    <div class="card-head"><span class="tag tag-splash">${typeLabel}</span><span class="tag">${regLabel}</span></div>
+                    <div class="img-box">${ev.banner ? `<img src="${ev.banner}" loading="lazy" onclick="window.open('${ev.banner}')">` : '<div style="padding:20px;color:#888;">No banner</div>'}</div>
+                    <div class="card-foot"><div class="fname" title="${ev.title}">${ev.title}</div>${linkBtn}</div>
+                    <div style="padding:0 10px 12px;font-size:12px;color:#c9b8e8;">${dates}</div>
+                </div>`;
+            container.appendChild(cardWrapper.firstElementChild);
+        }
+        async function fetchEventData(keywords, scanId) {
+            const norms = keywords.map(normStr).filter(n => n.length >= 3);
+            if (!norms.length) return;
+            const seen = new Set();
+            const jobs = Object.entries(API_REGIONS).map(async ([regLabel, code]) => {
+                try {
+                    const ctrl = new AbortController();
+                    const to = setTimeout(() => ctrl.abort(), 8000);
+                    const res = await fetch(API_BASE + code, { signal: ctrl.signal });
+                    clearTimeout(to);
+                    if (!res.ok) return;
+                    const j = await res.json();
+                    const items = [...(j.data && j.data.events ? j.data.events : []), ...(j.data && j.data.updates ? j.data.updates : [])];
+                    for (const ev of items) {
+                        if (scanId !== globalScanId) return;
+                        const nt = normStr(ev.title);
+                        if (!nt) continue;
+                        if (!norms.some(n => nt.includes(n))) continue;
+                        const key = regLabel + '|' + ev.title + '|' + ev.start;
+                        if (seen.has(key)) continue;
+                        seen.add(key);
+                        eventMatches++;
+                        createEventCard(ev, regLabel);
+                    }
+                } catch (e) { /* region down — CDN scan still runs */ }
+            });
+            await Promise.all(jobs);
+        }
+
+        function createCard(item) {
+            const sec = document.getElementById(`sec-${item.grp}`);
+            if(sec) sec.style.display = 'block';
+            
+            const container = document.getElementById(`grid-${item.grp}`);
+            const cardWrapper = document.createElement('div');
+            
+            cardWrapper.innerHTML = `
+                <div class="card">
+                    <div class="card-head"><span class="tag">${item.type}</span><span class="tag ${item.type === 'SPLASH' || item.type === 'TOP UP' ? 'tag-splash' : (item.grp === 'store' ? 'tag-store' : 'tag-p')}">${item.pre}</span></div>
+                    <div class="img-box"><img src="${item.url}" loading="lazy" onclick="window.open('${item.url}')"></div>
+                    <div class="card-foot"><div class="fname" title="${item.fname}">${item.fname}</div>${(item.type === 'SPLASH' || item.type === 'TOP UP') ? `<button class="kit-btn" title="Event Kit: Title + BG + Banner" onclick="event.stopPropagation(); makeEventKit('${item.url}', '${item.fname}')">🎨 KIT</button>` : ''}<a href="${item.url}" target="_blank" class="dl-btn" onclick="event.stopPropagation();"><i class="material-icons-round" style="font-size: 16px;">download</i></a></div>
+                </div>`;
+                
+            container.appendChild(cardWrapper.firstElementChild);
+        }
+
+        document.getElementById('keyword').addEventListener('keypress', e => { if(e.key === 'Enter') startEngine(); });
+    </script>
+</body>
+</html>
